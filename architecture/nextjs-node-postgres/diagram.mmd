@@ -1,0 +1,7 @@
+flowchart LR
+  user([Browser]) --> web[Next.js app]
+  web -->|REST and JSON| api[Node API]
+  web --> cdn[CDN for static assets]
+  api --> db[(Postgres)]
+  api --> cache[(Redis cache)]
+  api -->|webhooks| stripe[Stripe]

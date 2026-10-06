@@ -1,0 +1,18 @@
+flowchart LR
+  subgraph Now
+    a[Sign up and onboarding]
+    b[Core workflow]
+  end
+  subgraph Next
+    c[Team invites]
+    d[Billing]
+  end
+  subgraph Later
+    e[Integrations]
+    f[Analytics]
+  end
+  a --> b
+  b --> c
+  c --> d
+  d --> e
+  d --> f

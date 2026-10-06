@@ -1,0 +1,8 @@
+flowchart TD
+  start([User picks a plan]) --> checkout[Create checkout session]
+  checkout --> pay{Payment succeeds?}
+  pay -->|yes| webhook[Webhook received]
+  pay -->|no| retry[Show error and offer retry]
+  webhook --> verify[Verify the signature]
+  verify --> grant[Grant plan entitlements]
+  grant --> done([User sees the upgraded app])

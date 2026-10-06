@@ -1,0 +1,9 @@
+flowchart LR
+  spa[React SPA] -->|HTTPS| gw[API gateway]
+  gw --> auth[Auth service]
+  gw --> core[Core API]
+  auth --> users[(User database)]
+  core --> data[(Postgres)]
+  core --> queue[[Job queue]]
+  queue --> worker[Background worker]
+  worker --> email[Email provider]

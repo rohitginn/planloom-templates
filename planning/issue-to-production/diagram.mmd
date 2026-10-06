@@ -1,0 +1,9 @@
+flowchart TD
+  idea([Idea]) --> issue[Write a GitHub issue]
+  issue --> plan[Plan on the board]
+  plan --> branch[Create a branch]
+  branch --> pr[Open a pull request]
+  pr --> review{Approved?}
+  review -->|changes requested| branch
+  review -->|yes| merge[Merge]
+  merge --> ship([Ship and close the issue])

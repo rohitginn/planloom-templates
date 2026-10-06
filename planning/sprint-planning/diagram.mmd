@@ -1,0 +1,7 @@
+flowchart TD
+  backlog[(Backlog)] --> refine[Refine and size items]
+  refine --> pick{Fits the sprint capacity?}
+  pick -->|yes| sprint[Sprint plan]
+  pick -->|no| defer[Defer to the next sprint]
+  sprint --> tasks[Break into tasks]
+  tasks --> board[Track on the board]

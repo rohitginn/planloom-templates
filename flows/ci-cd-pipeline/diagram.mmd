@@ -1,0 +1,9 @@
+flowchart LR
+  push([Push to branch]) --> ci[CI: lint and test]
+  ci --> pass{Checks pass?}
+  pass -->|no| fix[Fix and push again]
+  fix --> ci
+  pass -->|yes| review[Code review]
+  review --> merge[Merge to main]
+  merge --> build[Build and deploy preview]
+  build --> prod([Release to production])

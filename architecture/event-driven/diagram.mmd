@@ -1,0 +1,12 @@
+flowchart LR
+  subgraph Producers
+    orders[Orders service]
+    billing[Billing service]
+  end
+  orders -->|OrderPlaced| bus{{Event bus}}
+  billing -->|InvoicePaid| bus
+  bus --> inventory[Inventory service]
+  bus --> notify[Notification service]
+  bus --> analytics[Analytics pipeline]
+  inventory --> invdb[(Inventory database)]
+  analytics --> warehouse[(Data warehouse)]
